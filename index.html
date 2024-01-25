@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
 <body>
-    
+    <div id="notification" class="hide">Player scores a point!</div>
+    <div id="container">
+        <div id="inner-elements">
+            <button id="rockBtn"><img src="Rock.svg" alt="Rock" class="choice-container" draggable="false"></button>
+            <button id="paperBtn"><img src="Paper.svg" alt="Paper" class="choice-container" draggable="false"></button>
+            <button id="scissorBtn"><img src="Scissors.svg" alt="Scissors" class="choice-container" draggable="false"></button>
+        </div>
+        <div id="scoreboard">
+            <img src="Scoreboard.svg" alt="Scoreboard" class="scoreboard-img" draggable="false">
+            <div id="player-score">0</div>
+            <div id="computer-score">0</div>
+        </div>
+        <!-- Add this somewhere inside your <body> tag -->
+        <div id="game-over-screen" style="display: none;">
+            <div id="game-over-message">Game Over</div>
+            <button id="restart-game">Play Again</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,165 @@
+body {
+    background-color: #E9DED4;
+}
+
+#container {
+    height: 750px;
+    width: auto;
+    display: flex;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background: url('Container.png') no-repeat center center;
+    background-size: contain;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Simplified transition */
+}
+
+#inner-elements {
+    display: flex;
+    gap: 40px;
+    margin-top: -10px;
+}
+
+button img {
+    display: block;
+    width: auto;
+    height: 450px;
+}
+
+.scoreboard-img{
+    width: 800px;
+    height: auto;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-3px); }
+    30% { transform: translateX(3px); }
+    50% { transform: translateX(-3px); }
+    70% { transform: translateX(3px); }
+    90% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+button:hover {
+    animation: shake 1.0s ease-in-out;
+}
+
+button:active {
+    animation: none;
+    transform: scale(0.9);
+    transition: transform 0.1s ease;
+}
+
+button.no-shake:hover {
+    animation: none;
+}
+
+.scoreboard {
+    width: 800px; /* Adjust as necessary */
+    height: auto; /* Adjust as necessary */
+    position: relative; /* Use relative positioning for the scoreboard */
+    /* ... other styles ... */
+}
+
+#player-score, #computer-score {
+    position: absolute;
+    font-size: 5em; /* Adjust the font size as needed */
+    /* Adjust top and left values to align your text properly */
+}
+
+#player-score {
+    top: 78%; /* Adjust this value to center vertically */
+    left: 620px; /* Adjust this value to position from the left edge */
+    transform: translate(0, -50%); /* This centers the div vertically relative to its height */
+}
+
+#computer-score {
+    top: 78%; /* Adjust this value to center vertically */
+    right: 620px; /* Adjust this value to position from the right edge */
+    transform: translate(0, -50%); /* This centers the div vertically relative to its height */
+}
+
+#game-over-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #E9DED4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2em;
+    color: white;
+    z-index: 1000;
+}
+
+#restart-game {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 3em;
+    border: 6px solid;
+    border-radius: 25px;
+    background-color: #E9DED4;
+    box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+
+}
+
+#restart-game:hover {
+    background-color:#c7beb5; /* Darker shade when hovered */
+}
+
+#restart-game:active {
+    background-color:#ada69e; /* Darker shade when clicked */
+}
+
+#game-over-message{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 6em;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+#notification {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background: #d9d9d9; /* Same background as the game container */
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for pop-up effect */
+    font-family: 'Arial', sans-serif; /* Match your game's font */
+    font-weight: bolder;
+    z-index: 10; /* Make sure it's above other elements */
+}
+
+/* Class to show the notification */
+.show {
+    display: flex;
+    animation: fadeInOut 3s ease-in-out; /* Removed 'forwards' */
+}
+.hide {
+    display: none;
+}
+
+@keyframes fadeInOut {
+    0%, to { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+
+
+
